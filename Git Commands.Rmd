@@ -1,0 +1,17 @@
+---
+title: "Git Commands"
+author: "Julian Martinez"
+date: "4/1/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+-   `git remote --verbose`
+    -   Shows the remotes you have setup. Github should be the origin.
+-   `git remote show origin`
+    -   Shows what branch the remote branch is tracking.
+    -   Shows the local branch configured for `git pull`
+    -   Shows the local ref(?) configured for `git push`
