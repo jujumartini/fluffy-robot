@@ -3,33 +3,35 @@ Walk Before Run
 Julian Martinez
 4/3/2022
 
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax
-for authoring HTML, PDF, and MS Word documents. For more details on
-using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that
-includes both content as well as the output of any embedded R code
-chunks within the document. You can embed an R code chunk like this:
-
 ``` r
-summary(cars)
+skimr::skim(iris)
 ```
 
-    ##      speed           dist       
-    ##  Min.   : 4.0   Min.   :  2.00  
-    ##  1st Qu.:12.0   1st Qu.: 26.00  
-    ##  Median :15.0   Median : 36.00  
-    ##  Mean   :15.4   Mean   : 42.98  
-    ##  3rd Qu.:19.0   3rd Qu.: 56.00  
-    ##  Max.   :25.0   Max.   :120.00
+|                                                  |      |
+|:-------------------------------------------------|:-----|
+| Name                                             | iris |
+| Number of rows                                   | 150  |
+| Number of columns                                | 5    |
+| \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_   |      |
+| Column type frequency:                           |      |
+| factor                                           | 1    |
+| numeric                                          | 4    |
+| \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ |      |
+| Group variables                                  | None |
 
-## Including Plots
+Data summary
 
-You can also embed plots, for example:
+**Variable type: factor**
 
-![](walk-before-run_files/figure-gfm/pressure-1.png)<!-- -->
+| skim_variable | n_missing | complete_rate | ordered | n_unique | top_counts                |
+|:--------------|----------:|--------------:|:--------|---------:|:--------------------------|
+| Species       |         0 |             1 | FALSE   |        3 | set: 50, ver: 50, vir: 50 |
 
-Note that the `echo = FALSE` parameter was added to the code chunk to
-prevent printing of the R code that generated the plot.
+**Variable type: numeric**
+
+| skim_variable | n_missing | complete_rate | mean |   sd |  p0 | p25 |  p50 | p75 | p100 | hist  |
+|:--------------|----------:|--------------:|-----:|-----:|----:|----:|-----:|----:|-----:|:------|
+| Sepal.Length  |         0 |             1 | 5.84 | 0.83 | 4.3 | 5.1 | 5.80 | 6.4 |  7.9 | ▆▇▇▅▂ |
+| Sepal.Width   |         0 |             1 | 3.06 | 0.44 | 2.0 | 2.8 | 3.00 | 3.3 |  4.4 | ▁▆▇▂▁ |
+| Petal.Length  |         0 |             1 | 3.76 | 1.77 | 1.0 | 1.6 | 4.35 | 5.1 |  6.9 | ▇▁▆▇▂ |
+| Petal.Width   |         0 |             1 | 1.20 | 0.76 | 0.1 | 0.3 | 1.30 | 1.8 |  2.5 | ▇▁▇▅▃ |
