@@ -1,0 +1,54 @@
+Render R script
+================
+Julian Martinez
+4/3/2022
+
+## Render an R script.
+
+In R scripts, code is top-level and prose is tucked into comments. You
+will use `#'` to request that certain comments appear as top-level prose
+in the rendered output.
+
+Use `#+` to treat a line as a chunk header.
+
+``` r
+skimr::skim(iris)
+```
+
+|                                                  |      |
+|:-------------------------------------------------|:-----|
+| Name                                             | iris |
+| Number of rows                                   | 150  |
+| Number of columns                                | 5    |
+| \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_   |      |
+| Column type frequency:                           |      |
+| factor                                           | 1    |
+| numeric                                          | 4    |
+| \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ |      |
+| Group variables                                  | None |
+
+Data summary
+
+**Variable type: factor**
+
+| skim_variable | n_missing | complete_rate | ordered | n_unique | top_counts                |
+|:--------------|----------:|--------------:|:--------|---------:|:--------------------------|
+| Species       |         0 |             1 | FALSE   |        3 | set: 50, ver: 50, vir: 50 |
+
+**Variable type: numeric**
+
+| skim_variable | n_missing | complete_rate | mean |   sd |  p0 | p25 |  p50 | p75 | p100 | hist  |
+|:--------------|----------:|--------------:|-----:|-----:|----:|----:|-----:|----:|-----:|:------|
+| Sepal.Length  |         0 |             1 | 5.84 | 0.83 | 4.3 | 5.1 | 5.80 | 6.4 |  7.9 | ▆▇▇▅▂ |
+| Sepal.Width   |         0 |             1 | 3.06 | 0.44 | 2.0 | 2.8 | 3.00 | 3.3 |  4.4 | ▁▆▇▂▁ |
+| Petal.Length  |         0 |             1 | 3.76 | 1.77 | 1.0 | 1.6 | 4.35 | 5.1 |  6.9 | ▇▁▆▇▂ |
+| Petal.Width   |         0 |             1 | 1.20 | 0.76 | 0.1 | 0.3 | 1.30 | 1.8 |  2.5 | ▇▁▇▅▃ |
+
+``` r
+plot(pressure)
+```
+
+![](render-r-script_files/figure-gfm/skim-1.png)<!-- -->
+
+Render the R script through one of these methods: - In RStudio, do File
+-> Compile Report - In R, do rmarkdown::render(“PATH TO YOUR SCRIPT.R”).
