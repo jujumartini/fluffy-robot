@@ -54,6 +54,8 @@ knitr::opts_chunk$set(echo = TRUE)
     -   `-m --message`
         -   Commit message. begin the commit message with a single short (less than 50 character)
             line summarizing the change, followed by a blank line and then a more thorough description.
+        -   Add two `-m` to have the first message act as a headline and the 
+            second message act as the description.
 -   checkout main branch
 -   git pull from github (origin)
 -   Integrate any additional changes from origin into current work
