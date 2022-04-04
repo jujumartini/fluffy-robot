@@ -18,6 +18,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Git Workflow
 
+-   `git branch [BRANCH-NAME like create-function/function_name_version/fix-thing/update-thing]`
+    -   Create a branch with a single goal.
+    -   Make branch have no spaces, use a hyphen `-` when you would use a space.
+    -   ! Make sure that there is no work in progress (WIP) on the current branch!
+    -   If there is use GitKraken as it will make a stash of that WIP that you can
+        add to the branch you created.
+-   `git checkout [BRANCH-NAME]`
+    -   Switch to new branch
 -   `git add path/to/the/changed/file`
     -   Stage small changes towards branch goal
 -   `git commit -m "WIP"`
