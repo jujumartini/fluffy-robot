@@ -26,6 +26,11 @@ knitr::opts_chunk$set(echo = TRUE)
         add to the branch you created.
 -   `git checkout [BRANCH-NAME]`
     -   Switch to new branch
+-   `git push -u origin [BRANCH NAME]`
+    -   Create new branch on remote origin repository on github and have your 
+        local new branch track the new remote branch (for push & pulls)
+    -   `<option> -u --set-upstream`
+        -   Adds upstream (tracking) reference.
 -   Make changes to scripts and save changes.
 -   `git status`
     -   See what has been changed in repo since last commit.
