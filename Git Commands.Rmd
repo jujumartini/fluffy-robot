@@ -57,7 +57,7 @@ knitr::opts_chunk$set(echo = TRUE)
         -   Add two `-m` to have the first message act as a headline and the 
             second message act as the description.
 -   checkout main branch
--   git pull from github (origin)
+-   `git pull` from github (origin)
 -   Integrate any additional changes from origin into current work
 -   merge feature branch to main branch
 -   Before pushing new shit onto github, do a pull request to make sure code
