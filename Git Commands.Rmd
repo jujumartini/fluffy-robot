@@ -18,6 +18,24 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Git Workflow
 
+-   `git branch [BRANCH-NAME like create-function/function_name_version/fix-thing/update-thing]`
+    -   Create a branch with a single goal.
+    -   Make branch have no spaces, use a hyphen `-` when you would use a space.
+    -   ! Make sure that there is no work in progress (WIP) on the current branch!
+    -   If there is use GitKraken as it will make a stash of that WIP that you can
+        add to the branch you created.
+-   `git checkout [BRANCH-NAME]`
+    -   Switch to new branch
+-   Make changes to scripts and save changes.
+-   `git status`
+    -   See what has been changed in repo since last commit.
+    -   `<option> -s --short`
+        -   ?? = Untracked files
+        -   A  = Added
+        -   D  = Deleted
+        -   M  = Modified
+        -   R  = Renamed
+        -   T  = Type changed
 -   `git add path/to/the/changed/file`
     -   Stage small changes towards branch goal
 -   `git commit -m "WIP"`
@@ -29,8 +47,17 @@ knitr::opts_chunk$set(echo = TRUE)
 -   `git commit --amend -m "Implement awesome feature; closes #43"`
     -   When you want the final changes for a commit, amend again but now add in
         the new message.
+-   `git commit <options>`
+    -   `-a --all`
+        -   Automatically stage all files that have been modified or deleted, but
+            not new files that have been added(?).
+    -   `-m --message`
+        -   Commit message. begin the commit message with a single short (less than 50 character)
+            line summarizing the change, followed by a blank line and then a more thorough description.
+        -   Add two `-m` to have the first message act as a headline and the 
+            second message act as the description.
 -   checkout main branch
--   git pull from github (origin)
+-   `git pull` from github (origin)
 -   Integrate any additional changes from origin into current work
 -   merge feature branch to main branch
 -   Before pushing new shit onto github, do a pull request to make sure code
