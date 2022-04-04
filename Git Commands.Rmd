@@ -15,3 +15,25 @@ knitr::opts_chunk$set(echo = TRUE)
     -   Shows what branch the remote branch is tracking.
     -   Shows the local branch configured for `git pull`
     -   Shows the local ref(?) configured for `git push`
+
+# Git Workflow
+
+-   `git add path/to/the/changed/file`
+    -   Stage small changes towards branch goal
+-   `git commit -m "WIP"`
+    -   Save changes in a work in progress (WIP) commit. `-m` is the message in
+        the commit.
+-   `git commit --amend --no-edit`
+    -   After staging additional changes, amend additional changes to WIP commit.
+    -   `--no-edit` retains the current message of WIP commit.
+-   `git commit --amend -m "Implement awesome feature; closes #43"`
+    -   When you want the final changes for a commit, amend again but now add in
+        the new message.
+-   checkout main branch
+-   git pull from github (origin)
+-   Integrate any additional changes from origin into current work
+-   merge feature branch to main branch
+-   Before pushing new shit onto github, do a pull request to make sure code
+    passes QA and tests.
+-   `git push`
+    -   Finally push changes to github
