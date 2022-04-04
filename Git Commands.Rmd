@@ -47,6 +47,13 @@ knitr::opts_chunk$set(echo = TRUE)
 -   `git commit --amend -m "Implement awesome feature; closes #43"`
     -   When you want the final changes for a commit, amend again but now add in
         the new message.
+-   `git commit <options>`
+    -   `-a --all`
+        -   Automatically stage all files that have been modified or deleted, but
+            not new files that have been added(?).
+    -   `-m --message`
+        -   Commit message. begin the commit message with a single short (less than 50 character)
+            line summarizing the change, followed by a blank line and then a more thorough description.
 -   checkout main branch
 -   git pull from github (origin)
 -   Integrate any additional changes from origin into current work
