@@ -26,6 +26,16 @@ knitr::opts_chunk$set(echo = TRUE)
         add to the branch you created.
 -   `git checkout [BRANCH-NAME]`
     -   Switch to new branch
+-   Make changes to scripts and save changes.
+-   `git status`
+    -   See what has been changed in repo since last commit.
+    -   `<option> -s --short`
+        -   ?? = Untracked files
+        -   A  = Added
+        -   D  = Deleted
+        -   M  = Modified
+        -   R  = Renamed
+        -   T  = Type changed
 -   `git add path/to/the/changed/file`
     -   Stage small changes towards branch goal
 -   `git commit -m "WIP"`
