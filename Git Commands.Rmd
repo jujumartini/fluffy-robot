@@ -9,6 +9,15 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# Notes
+
+-   Create branches off of main with a single goal, like updating/creating a function.
+-   Make branch name have no spaces, use a hyphen `-` when you would use a space.
+-   !!Make sure that there is no work in progress (WIP) on the current branch!! If there is, use GitKraken as it will make a stash of that WIP that you can add to the branch you created.
+-   NEVER AMEND COMMITS THAT ARE PUBLISHED (i.e. appear on a remote repository)
+
+# Git Commands & common options
+
 -   `git remote --verbose`
 
     -   Shows the remotes you have setup. Github should be the origin.
@@ -33,36 +42,35 @@ knitr::opts_chunk$set(echo = TRUE)
 -   `git checkout`
     -   Switch branches or restore working tree files.
     -   `-b <new_branch>`: Create a new branch named `<new_branch>`
-        -   `-t --track`: Set up "upstream" configuration to tell `<new_branch>` to track a remote branch for push/pull
+        -   `-t --track`: Set up "upstream" configuration to tell `<new_branch>` to track a remote branch for push/pull. Is usually named `origin/<new_branch>`
+
+-   `git push`
+    -   Update remote branches with commits.
+    -   `<branch>`: Update remote <branch> with local one. If remote one doesn't exist, it is created.
+    -   `-u --set-upstream`: set upstream for git pull status.
+    
+-   `git commit`
+    -   Record changes to repo
+    -   `-a --all`: Tell the command to automatically stage files that have been modified and deleted, but new files you have not told Git about are not affected.
+    -   `-m --message <msg>`: Use the given <msg> as the commit message. If multiple -m options are given, their values are concatenated as separate paragraphs.
+        -   `git commit -m "<Headline>" -m "<Description>"`: Headline should be < 50 characters and description is more thorough.
+    -   `--amend`: Replace the tip of the current branch by creating a new commit.
+        -   `--no-edit`: Amends a commit without changing its commit message.
 
 
 # Git Workflow
 
 1)  The first step involves creating a new branch off of main. Doing so depends on if a) the new branch has already been created on Github or b) if you are creating the branch locally first.
-1)  One of two options: a) create new branch 
-    a)  `git branch` & `git checkout`
-        -   `git branch <new_branch>`
-            -   Create a branch with a single goal.
-            -   Make branch name have no spaces, use a hyphen `-` when you would use a space.
-            -   ! Make sure that there is no work in progress (WIP) on the current branch!
-            -   If there is, use GitKraken as it will make a stash of that WIP that you can add to the branch you created.
-        -   `git checkout <new_branch>`
-            - Switch to new branch
-    b)  `git checkout -b <new_branch>`
-        -   Create
+    a)  `git checkout -b <new_branch> -t origin/<new_branch>`
+    b)  `git checkout -b <new_branch>` then `git push -u origin <new_branch>`
 
-3)  `git push -u origin [BRANCH NAME]`
-    -   Create new branch on remote origin repository on github and have your local new branch track the new remote branch (for push & pulls)
-    -   `<option> -u --set-upstream`
-        -   Adds upstream (tracking) reference.
+2)  Make changes to scripts and save changes.
 
-4)  Make changes to scripts and save changes.
-
-5)  Add your small changes of files to the index with `git add`.
+3)  Add your small changes of files to the index with `git add`.
     -   Stage each file individually with `git add "path/to/the/changed/file"`
     -   Stage all files with `git add .`
 
-6)  See which files are staged & unstaged with `git status` 
+4)  See which files are staged & unstaged with `git status` 
     -   `<option> -s --short`
         -   ?? = Untracked files
         -   A = Added
@@ -73,32 +81,26 @@ knitr::opts_chunk$set(echo = TRUE)
     -   Files with red letter(s) = unstaged
     -   Files with green letter  = staged
 
-7)  `git commit -m "WIP"`
-    -   Save changes in a work in progress (WIP) commit.
-    -   `-m` is the message in the commit.
+5)  Either a) make a commit that have changes that are all relevant or b) make a work in progress (WIP) that can still have some changes add to it.
+    a)  `git commit -m "<Headline>" -m "<Description>"`
+    b)  
+        -   `git commit -m "WIP*"`
+        -   Make additional changes to files.
+        -   Stage changes to index
+        -   If changes aren't final then do another intermidiate commit with `git commit --amend --no-edit`.
+        -   If changes are final then `git commit --amend -m "<Headline>" -m "<Description>"`
 
-8)  `git commit --amend --no-edit`
-    -   After staging additional changes, amend additional changes to WIP commit.
-    -   `--no-edit` retains the current message of WIP commit.
+6)  checkout main branch with `git checkout main`.
 
-9)  `git commit --amend -m "Implement awesome feature; closes #43"`
-    -   When you want the final changes for a commit, amend again but now add in the new message.
+7)  Do a pull from Github (remote/origin) with `git pull` to see if any contributors have added new code (good practice even if you are the sole contributor).
 
-10) `git commit <options>` - `-a --all`
-    -   Automatically stage all files that have been modified or deleted, but not new files that have been added(?).
-    -   `-m --message`
-        -   Commit message. begin the commit message with a single short (less than 50 character) line summarizing the change, followed by a blank line and then a more thorough description.
-    -   Add two `-m` to have the first message act as a headline and the second message act as the description.
+8)  If local `main` was behind from `origin/main`, then cherrypick commits into `<new_branch>`
+    -   ********* TO DO ************ Add how to actually do this.
 
-11) checkout main branch
+9)  Merge local `<new_branch>` into local `main` with ********** TO DO *********.
 
-12) `git pull` from github (origin)
+10) Do a pull request on main to make sure code passes QA and tests. by doing  ********** TO D O*********.
 
-13) Integrate any additional changes from origin into current work
+11) Once pull request is accepted, `git push` branch tracked branch on github and merge on github.
 
-14) merge feature branch to main branch
-
-15) Before pushing new shit onto github, do a pull request to make sure code passes QA and tests.
-
-16) `git push`
-    -   Finally push changes to github
+12) Delete branch locally with `git branch -d <new_branch>` and remotely with `git push origin --delete <new_branch>`.
