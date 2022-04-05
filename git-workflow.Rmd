@@ -9,6 +9,30 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# Prerequisites
+
+## [Install choco](https://community.chocolatey.org/courses/installation/installing?method=installing-chocolatey)
+
+-   REQUIRES ADMINISTRATOR ACCESS
+
+## Install & Open lazygit
+
+-   Open command prompt WITH ADMIN ACCESS
+-   `choco install lazygit`
+-   go to `C:\Users\marti994\AppData\Local\Temp\chocolatey` and open the lazygit folder.
+-   Go to latest version (0.34 as of now).
+-   Unzip folder and move lazygit.exe to top level of git repository.
+-   Shift + Right-click folder in File Explorer
+-   "Open Powershell Window here"
+-   Click on logo top-left
+-   Preferences -> Colors -> Screen Background to BLACK (RBG all to 12)
+-   Reopen Powershell
+-   `lazygit`
+-   Press `x` to see Menu commands (and hotkeys with each command)
+    -   Scroll through commands with $\downarrow$ & $\uparrow$
+    -   Press `enter` on a command to do it.
+    -   `esc` to exit menu
+
 # Notes
 
 -   Create branches off of main with a single goal, like updating/creating a function.
