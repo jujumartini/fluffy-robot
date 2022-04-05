@@ -19,16 +19,37 @@ knitr::opts_chunk$set(echo = TRUE)
     -   Shows the local branch configured for `git pull`
     -   Shows the local ref(?) configured for `git push`
 
+-   `git branch`
+    -   List, create, or delete branches.
+    -   `<new_branch>`: Create new branch
+    -   `-a --all`: List both remote-tracking branches and local branches.
+        -   `--list`: Combine with`-a`. With optional <pattern>..., e.g. git branch --list 'maint-*', list only the branches that match the pattern(s).
+    -   `-d --delete`: Delete a branch.
+    -   `-m --move`: Move/rename a branch.
+    -   `-t --track`: When creating a new branch, set up `branch.<name>.remote` to mark the start-point branch as "upstream" from the new branch. This configuration will tell git to show the relationship between the two branches in git status and git branch -v. Furthermore, it directs git pull without arguments to pull from the upstream when the new branch is checked out.
+    -   `-v --verbose`: When in list mode, show sha1 and commit subject line for each head, along with relationship to upstream branch (if any).
+    -   `-vv`: Print the path of the linked worktree (if any) and the name of the upstream branch, as well.
+
+-   `git checkout`
+    -   Switch branches or restore working tree files.
+    -   `-b <new_branch>`: Create a new branch named `<new_branch>`
+        -   `-t --track`: Set up "upstream" configuration to tell `<new_branch>` to track a remote branch for push/pull
+
+
 # Git Workflow
 
-1)  `git branch [BRANCH-NAME like create-function/function_name_version/fix-thing/update-thing]`
-    -   Create a branch with a single goal.
-    -   Make branch name have no spaces, use a hyphen `-` when you would use a space.
-    -   ! Make sure that there is no work in progress (WIP) on the current branch!
-    -   If there is use, GitKraken as it will make a stash of that WIP that you can add to the branch you created.
-
-2)  `git checkout [BRANCH-NAME]`
-    - Switch to new branch
+1)  The first step involves creating a new branch off of main. Doing so depends on if a) the new branch has already been created on Github or b) if you are creating the branch locally first.
+1)  One of two options: a) create new branch 
+    a)  `git branch` & `git checkout`
+        -   `git branch <new_branch>`
+            -   Create a branch with a single goal.
+            -   Make branch name have no spaces, use a hyphen `-` when you would use a space.
+            -   ! Make sure that there is no work in progress (WIP) on the current branch!
+            -   If there is, use GitKraken as it will make a stash of that WIP that you can add to the branch you created.
+        -   `git checkout <new_branch>`
+            - Switch to new branch
+    b)  `git checkout -b <new_branch>`
+        -   Create
 
 3)  `git push -u origin [BRANCH NAME]`
     -   Create new branch on remote origin repository on github and have your local new branch track the new remote branch (for push & pulls)
@@ -37,8 +58,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 4)  Make changes to scripts and save changes.
 
-5)  `git status` 
-    -   See what has been changed in repo since last commit.
+5)  Add your small changes of files to the index with `git add`.
+    -   Stage each file individually with `git add "path/to/the/changed/file"`
+    -   Stage all files with `git add .`
+
+6)  See which files are staged & unstaged with `git status` 
     -   `<option> -s --short`
         -   ?? = Untracked files
         -   A = Added
@@ -48,9 +72,6 @@ knitr::opts_chunk$set(echo = TRUE)
         -   T = Type changed
     -   Files with red letter(s) = unstaged
     -   Files with green letter  = staged
-
-6)  `git add path/to/the/changed/file`
-    -   Stage small changes towards branch goal
 
 7)  `git commit -m "WIP"`
     -   Save changes in a work in progress (WIP) commit.
