@@ -129,3 +129,7 @@ knitr::opts_chunk$set(echo = TRUE)
 1)    Either:
       a)    open a Command Prompt/Powershell in the Terminal Tab of RStudio or
       b)    Shift+RightClick repo in File Explorer and open a Powershell terminal.
+      
+2)    Make changes to scripts and files.
+
+3)    Stage changes by having **Files**
