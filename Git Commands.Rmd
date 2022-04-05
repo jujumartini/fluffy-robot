@@ -97,10 +97,8 @@ knitr::opts_chunk$set(echo = TRUE)
 8)  If local `main` was behind from `origin/main`, then cherrypick commits into `<new_branch>`
     -   ********* TO DO ************ Add how to actually do this.
 
-9)  Merge local `<new_branch>` into local `main` with ********** TO DO *********.
+9)  Do a pull request by `git push <new_branch>`. Now go to Github and double check changes AND to make sure code passes QA and tests.  ********** TO D O*********.
 
-10) Do a pull request on main to make sure code passes QA and tests. by doing  ********** TO D O*********.
+11) Once pull request is accepted, complete the pull request by merging `<new_branch>` with `main` and deleting `<new_branch>`.
 
-11) Once pull request is accepted, `git push` branch tracked branch on github and merge on github.
-
-12) Delete branch locally with `git branch -d <new_branch>` and remotely with `git push origin --delete <new_branch>`.
+12) Delete `<new_branch>` locally with `git branch -D <new_branch>` and then `git pull` while in `main` branch.
