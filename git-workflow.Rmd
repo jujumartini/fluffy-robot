@@ -19,9 +19,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 -   Open command prompt WITH ADMIN ACCESS
 -   `choco install lazygit`
--   go to `C:\Users\marti994\AppData\Local\Temp\chocolatey` and open the lazygit folder.
--   Go to latest version (0.34 as of now).
--   Unzip folder and move lazygit.exe to top level of git repository.
 -   Shift + Right-click folder in File Explorer
 -   "Open Powershell Window here"
 -   Click on logo top-left
@@ -130,5 +127,5 @@ knitr::opts_chunk$set(echo = TRUE)
 # Lazygit Workflow
 
 1)    Either:
-      a)    open a Commands Prompt the Terminal Tab of RStudio or
-      b)    open a 
+      a)    open a Command Prompt/Powershell in the Terminal Tab of RStudio or
+      b)    Shift+RightClick repo in File Explorer and open a Powershell terminal.
