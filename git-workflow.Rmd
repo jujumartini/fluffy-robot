@@ -126,3 +126,9 @@ knitr::opts_chunk$set(echo = TRUE)
 11) Once pull request is accepted, complete the pull request by merging `<new_branch>` with `main` and deleting `<new_branch>`.
 
 12) Delete `<new_branch>` locally with `git branch -D <new_branch>` and then `git pull` while in `main` branch.
+
+# Lazygit Workflow
+
+1)    Either:
+      a)    open a Commands Prompt the Terminal Tab of RStudio or
+      b)    open a 
