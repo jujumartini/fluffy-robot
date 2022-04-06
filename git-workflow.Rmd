@@ -209,7 +209,9 @@ knitr::opts_chunk$set(echo = TRUE)
     
     -   If branch has been made on origin:
     
-        -   
+        -   Press `n` to create a newName the new branch in the pop-up. Notice how you will automatically be checked out into new branch.
+        -   Press `P (shift+p)` to push to origin.
+        -   Press `<tab>` to focus on **Suggestions** panel and the <new_branch> name you made should appear on suggestions. Highlight it and press `<enter>`
 
 3.  Make changes to scripts and files.
 
