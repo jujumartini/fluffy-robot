@@ -250,3 +250,7 @@ knitr::opts_chunk$set(echo = TRUE)
     `<new_branch>` with `main` and deleting `<new_branch>` on origin.
 
 11. Delete `<new_branch>` locally by focusing on Panel 3 - **Local Branches** and pressing `d` while `<new_branch>` is selected. Press `<enter>` when prompted if you are sure.
+
+    -   If for some reason remote `<new_branch>` was not deleted, focus on Panel 3 - **Remotes**.
+    -   Press `<enter>` and highlight `<new_branch>`.
+    -   Press `d`.
