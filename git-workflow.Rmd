@@ -211,4 +211,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
     -   `c` to commit and add a message within lazygit. Use alt+enter to add newlines (DOES NOT WORK IN WINDOWS COMMAND LINE, ONLY IN Rstudio)
     -   `C (shift+c)` to open text editor (currently set to vi) to create commit message
-    -   
+    -   `A (shift+a)` to amend previous commit.
+    
+        -   Focus to Panel 4 - **Commits** and select most recent commit.
+        -   `r` to reword commit message within lazygit.
+        -   `R (shift+r)` to reword commit message with text editor.
+
