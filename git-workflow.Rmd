@@ -217,3 +217,16 @@ knitr::opts_chunk$set(echo = TRUE)
         -   `r` to reword commit message within lazygit.
         -   `R (shift+r)` to reword commit message with text editor.
 
+6.  Focus to Panel 3 - **Local Branches** and highlight `main` branch.
+
+    -   Press `<space>` to checkout main branch.
+
+7.  Pull from origin/main with `p` to see if any contributors have added new code.
+
+8.  If local `main` was behind from `origin/main`, then cherrypick
+    commits into `<new_branch>` - \*\*\*\*\*\*\*\*\* TO DO
+    \*\*\*\*\*\*\*\*\*\*\*\* Add how to actually do this.
+
+9.  Once `<new_branch>` is ready to push, open a pull request by focusing on Panel 3 - **Local Branches** and highlighting `<new_branch>`
+
+    -   Press `o` to open a pull request which will take you to the Github repository page.
