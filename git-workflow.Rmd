@@ -199,7 +199,18 @@ knitr::opts_chunk$set(echo = TRUE)
     RStudio or
     2.  Shift+RightClick repo in File Explorer and open a Powershell terminal.
 
-2.  Focus on Panel 3 - **Local Branches** and create a new branch off of main with `n`
+2.  Focus on Panel 3 - **Local Branches** and create a `new_branch` off of main depending one of two things:
+
+    -   If branch has not been made on origin:
+    
+        -   Press `n` to create a newName the new branch in the pop-up. Notice how you will automatically be checked out into new branch.
+        -   Press `P (shift+p)` to push to origin.
+        -   A "Enter upstream as <remote> <branchname>" will appear. Just press `<enter>`.
+    
+    -   If branch has been made on origin:
+    
+        -   
+
 3.  Make changes to scripts and files.
 
 4.  To stage files, While focused on Panel 2 - **Files**:
