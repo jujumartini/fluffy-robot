@@ -33,6 +33,8 @@ Julian Martinez
     -   Press `enter` on a command to do it.
     -   `esc` to exit menu
 
+-   Use `[` and `]` to switch tabs within a panel.
+
 # Notes
 
 -   Create branches off of main with a single goal, like
@@ -177,10 +179,10 @@ Julian Martinez
 
 9.  Do a pull request by `git push <new_branch>`. Now go to Github and
     double check changes AND to make sure code passes QA and tests.
-    \*\*\*\*\*\*\*\*\*\* TO D O\*\*\*\*\*\*\*\*\*.
+    \*\*\*\*\*\*\*\*\*\* TO DO \*\*\*\*\*\*\*\*\*.
 
 10. Once pull request is accepted, complete the pull request by merging
-    `<new_branch>` with `main` and deleting `<new_branch>`.
+    `<new_branch>` with `main` and deleting `<new_branch>` on origin.
 
 11. Delete `<new_branch>` locally with `git branch -D <new_branch>` and
     then `git pull` while in `main` branch.
@@ -194,10 +196,80 @@ Julian Martinez
     2.  Shift+RightClick repo in File Explorer and open a Powershell
         terminal.
 
-2.  Focus on Panel 3 - **Local Branches** and create a new branch off of
-    main with `n`
+2.  Focus on Panel 3 - **Local Branches** and create a `new_branch` off
+    of main depending one of two things:
+
+    -   If branch has not been made on origin:
+
+        -   Press `n` to create a newName the new branch in the pop-up.
+            Notice how you will automatically be checked out into new
+            branch.
+        -   Press `P (shift+p)` to push to origin.
+        -   A “Enter upstream as <remote> <branchname>” will appear.
+            Just press `<enter>`.
+
+    -   If branch has been made on origin:
+
+        -   Press `n` to create a newName the new branch in the pop-up.
+            Notice how you will automatically be checked out into new
+            branch.
+        -   Press `P (shift+p)` to push to origin.
+        -   Press `<tab>` to focus on **Suggestions** panel and the
+            <new_branch> name you made should appear on suggestions.
+            Highlight it and press `<enter>`
 
 3.  Make changes to scripts and files.
 
-4.  Stage changes by having cursor be focused on the **Files** panel and
-    press either
+4.  To stage files, While focused on Panel 2 - **Files**:
+
+    -   Select individual files to stage with <space> and ↑ ↓
+    -   `a` to stage all files
+
+5.  To commit, while still focused Panel 2 - **Files**:
+
+    -   `c` to commit and add a message within lazygit. Use alt+enter to
+        add newlines (DOES NOT WORK IN WINDOWS COMMAND LINE, ONLY IN
+        Rstudio)
+
+    -   `C (shift+c)` to open text editor (currently set to vi) to
+        create commit message
+
+    -   `A (shift+a)` to amend previous commit.
+
+        -   Focus to Panel 4 - **Commits** and select most recent
+            commit.
+        -   `r` to reword commit message within lazygit.
+        -   `R (shift+r)` to reword commit message with text editor.
+
+6.  Focus to Panel 3 - **Local Branches** and highlight `main` branch.
+
+    -   Press `<space>` to checkout main branch.
+
+7.  Pull from origin/main with `p` to see if any contributors have added
+    new code.
+
+8.  If local `main` was behind from `origin/main`, then cherrypick
+    commits into `<new_branch>` - \*\*\*\*\*\*\*\*\* TO DO
+    \*\*\*\*\*\*\*\*\*\*\*\* Add how to actually do this.
+
+9.  Once `<new_branch>` is ready to push, open a pull request by
+    focusing on Panel 3 - **Local Branches** and highlighting
+    `<new_branch>`
+
+    -   Press `o` to open a pull request which will take you to the
+        Github repository page.
+
+10. On Github double check changes AND make sure code passes QA and
+    tests. \*\*\*\*\*\*\*\*\*\* TO DO \*\*\*\*\*\*\*\*\*.
+
+11. Once pull request is accepted, complete the pull request by merging
+    `<new_branch>` with `main` and deleting `<new_branch>` on origin.
+
+12. Delete `<new_branch>` locally by focusing on Panel 3 - **Local
+    Branches** and pressing `d` while `<new_branch>` is selected. Press
+    `<enter>` when prompted if you are sure.
+
+    -   If for some reason remote `<new_branch>` was not deleted, focus
+        on Panel 3 - **Remotes**.
+    -   Press `<enter>` and highlight `<new_branch>`.
+    -   Press `d`.

@@ -39,6 +39,8 @@ knitr::opts_chunk$set(echo = TRUE)
     -   Press `enter` on a command to do it.
     -   `esc` to exit menu
 
+-   Use `[` and `]` to switch tabs within a panel.
+
 # Notes
 
 -   Create branches off of main with a single goal, like
