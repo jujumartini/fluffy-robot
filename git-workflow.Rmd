@@ -183,10 +183,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 9.  Do a pull request by `git push <new_branch>`. Now go to Github and
     double check changes AND to make sure code passes QA and tests.
-    \*\*\*\*\*\*\*\*\*\* TO D O\*\*\*\*\*\*\*\*\*.
+    \*\*\*\*\*\*\*\*\*\* TO DO \*\*\*\*\*\*\*\*\*.
 
 10. Once pull request is accepted, complete the pull request by merging
-    `<new_branch>` with `main` and deleting `<new_branch>`.
+    `<new_branch>` with `main` and deleting `<new_branch>` on origin.
 
 11. Delete `<new_branch>` locally with `git branch -D <new_branch>` and
     then `git pull` while in `main` branch.
@@ -230,3 +230,10 @@ knitr::opts_chunk$set(echo = TRUE)
 9.  Once `<new_branch>` is ready to push, open a pull request by focusing on Panel 3 - **Local Branches** and highlighting `<new_branch>`
 
     -   Press `o` to open a pull request which will take you to the Github repository page.
+
+10. On Github double check changes AND make sure code passes QA and tests. \*\*\*\*\*\*\*\*\*\* TO DO \*\*\*\*\*\*\*\*\*.
+
+10. Once pull request is accepted, complete the pull request by merging
+    `<new_branch>` with `main` and deleting `<new_branch>` on origin.
+
+11. Delete `<new_branch>` locally by focusing on Panel 3 - **Local Branches** and pressing `d` while `<new_branch>` is selected. Press `<enter>` when prompted if you are sure.
