@@ -3,6 +3,36 @@ Git Commands
 Julian Martinez
 4/1/2022
 
+# Prerequisites
+
+## [Install choco](https://community.chocolatey.org/courses/installation/installing?method=installing-chocolatey)
+
+-   REQUIRES ADMINISTRATOR ACCESS
+
+## Install & Open lazygit
+
+-   Open command prompt WITH ADMIN ACCESS
+
+-   `choco install lazygit`
+
+-   Shift + Right-click folder in File Explorer
+
+-   “Open Powershell Window here”
+
+-   Click on logo top-left
+
+-   Preferences -> Colors -> Screen Background to BLACK (RBG all to 12)
+
+-   Reopen Powershell
+
+-   `lazygit`
+
+-   Press `x` to see Menu commands (and hotkeys with each command)
+
+    -   Scroll through commands with $\\\\downarrow$ & $\\\\uparrow$
+    -   Press `enter` on a command to do it.
+    -   `esc` to exit menu
+
 # Notes
 
 -   Create branches off of main with a single goal, like
@@ -30,14 +60,20 @@ Julian Martinez
 -   `git branch`
 
     -   List, create, or delete branches.
+
     -   `<new_branch>`: Create new branch
+
     -   `-a --all`: List both remote-tracking branches and local
         branches.
-        -   `--list`: Combine with`-a`. With optional <pattern>…,
-            e.g. git branch –list ’maint-\*’, list only the branches
-            that match the pattern(s).
+
+        -   `--list`: Combine with`-a`. With optional <pattern>…, e.g.
+            git branch –list ‘maint-\*’, list only the branches that
+            match the pattern(s).
+
     -   `-d --delete`: Delete a branch.
+
     -   `-m --move`: Move/rename a branch.
+
     -   `-t --track`: When creating a new branch, set up
         `branch.<name>.remote` to mark the start-point branch as
         “upstream” from the new branch. This configuration will tell git
@@ -45,16 +81,20 @@ Julian Martinez
         and git branch -v. Furthermore, it directs git pull without
         arguments to pull from the upstream when the new branch is
         checked out.
+
     -   `-v --verbose`: When in list mode, show sha1 and commit subject
         line for each head, along with relationship to upstream branch
         (if any).
+
     -   `-vv`: Print the path of the linked worktree (if any) and the
         name of the upstream branch, as well.
 
 -   `git checkout`
 
     -   Switch branches or restore working tree files.
+
     -   `-b <new_branch>`: Create a new branch named `<new_branch>`
+
         -   `-t --track`: Set up “upstream” configuration to tell
             `<new_branch>` to track a remote branch for push/pull. Is
             usually named `origin/<new_branch>`
@@ -69,16 +109,21 @@ Julian Martinez
 -   `git commit`
 
     -   Record changes to repo
+
     -   `-a --all`: Tell the command to automatically stage files that
         have been modified and deleted, but new files you have not told
         Git about are not affected.
+
     -   `-m --message <msg>`: Use the given <msg> as the commit message.
         If multiple -m options are given, their values are concatenated
         as separate paragraphs.
+
         -   `git commit -m "<Headline>" -m "<Description>"`: Headline
             should be \< 50 characters and description is more thorough.
+
     -   `--amend`: Replace the tip of the current branch by creating a
         new commit.
+
         -   `--no-edit`: Amends a commit without changing its commit
             message.
 
@@ -94,31 +139,25 @@ Julian Martinez
 
 2.  Make changes to scripts and save changes.
 
-3.  Add your small changes of files to the index with `git add`.
+3.  Add your small changes of files to the index with `git add`. - Stage
+    each file individually with `git add "path/to/the/changed/file"` -
+    Stage all files with `git add .`
 
-    -   Stage each file individually with
-        `git add "path/to/the/changed/file"`
-    -   Stage all files with `git add .`
+4.  See which files are staged & unstaged with `git status` -
+    `<option> -s --short` - ?? = Untracked files - A = Added - D =
+    Deleted - M = Modified - R = Renamed - T = Type changed - Files with
+    red letter(s) = unstaged - Files with green letter = staged
 
-4.  See which files are staged & unstaged with `git status`
+5.  Either
 
-    -   `<option> -s --short`
-        -   ?? = Untracked files
-        -   A = Added
-        -   D = Deleted
-        -   M = Modified
-        -   R = Renamed
-        -   T = Type changed
-    -   Files with red letter(s) = unstaged
-    -   Files with green letter = staged
+    1.  Make a commit that have changes that are all relevant.
 
-5.  Either a) make a commit that have changes that are all relevant
-    or b) make a work in progress (WIP) that can still have some changes
-    add to it.
+        -   `git commit -m "<Headline>" -m "<Description>"`
 
-    1.  `git commit -m "<Headline>" -m "<Description>"`
+    2.  make a work in progress (WIP) that can still have some changes
+        add to it.
 
-    2.  -   `git commit -m "WIP*"`
+        -   `git commit -m "WIP*"`
         -   Make additional changes to files.
         -   Stage changes to index
         -   If changes aren’t final then do another intermidiate commit
@@ -133,10 +172,8 @@ Julian Martinez
     sole contributor).
 
 8.  If local `main` was behind from `origin/main`, then cherrypick
-    commits into `<new_branch>`
-
-    -   \*\*\*\*\*\*\*\*\* TO DO \*\*\*\*\*\*\*\*\*\*\*\* Add how to
-        actually do this.
+    commits into `<new_branch>` - \*\*\*\*\*\*\*\*\* TO DO
+    \*\*\*\*\*\*\*\*\*\*\*\* Add how to actually do this.
 
 9.  Do a pull request by `git push <new_branch>`. Now go to Github and
     double check changes AND to make sure code passes QA and tests.
@@ -147,3 +184,20 @@ Julian Martinez
 
 11. Delete `<new_branch>` locally with `git branch -D <new_branch>` and
     then `git pull` while in `main` branch.
+
+# Lazygit Workflow
+
+1.  Either:
+
+    1.  open a Command Prompt/Powershell in the Terminal Tab of RStudio
+        or
+    2.  Shift+RightClick repo in File Explorer and open a Powershell
+        terminal.
+
+2.  Focus on Panel 3 - **Local Branches** and create a new branch off of
+    main with `n`
+
+3.  Make changes to scripts and files.
+
+4.  Stage changes by having cursor be focused on the **Files** panel and
+    press either
